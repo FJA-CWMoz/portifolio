@@ -1,205 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-Mz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Estudos | Fernando Joana António</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Courier New', 'Segoe UI', monospace;
-            background: #ffffff;
-            color: #111111;
-            line-height: 1.6;
-            padding: 2rem;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        header {
-            border-bottom: 2px solid #111;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-        }
-        .version {
-            font-size: 0.8rem;
-            color: #555;
-            margin-top: 0.5rem;
-        }
-        h1 {
-            font-size: 2rem;
-            font-weight: normal;
-        }
-        h2 {
-            font-size: 1.5rem;
-            font-weight: normal;
-            margin: 1.5rem 0 1rem 0;
-            padding-bottom: 0.25rem;
-            border-bottom: 1px solid #ccc;
-        }
-        h3 {
-            font-size: 1.2rem;
-            font-weight: normal;
-            margin: 1rem 0 0.5rem 0;
-        }
-        .linguagem {
-            margin-bottom: 2rem;
-        }
-        .aulas {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .card {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            background: #fafafa;
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-        .titulo-aula {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .data {
-            font-size: 0.8rem;
-            color: #666;
-        }
-        .resumo {
-            color: #333;
-            margin: 0.5rem 0;
-        }
-        .status {
-            font-size: 0.8rem;
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            background: #e0e0e0;
-            border-radius: 2px;
-        }
-        footer {
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid #ccc;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #666;
-        }
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            .card-header {
-                flex-direction: column;
-                gap: 0.25rem;
-            }
-        }
-    </style>
+    <title>portifólio de Estudos | Fernando Joana António</title>
+    
+    <!-- Font Awesome 6 (gratuito) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>/dev/estudos_<span style="text-decoration: underline;">[seu-nome]</span></h1>
-            <div class="version">
-                release: v0.0.1 | html estático
-            </div>
-        </header>
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menutoggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1><span class="underline">Fernando Joana António</span></h1>
+        </div>
+        <div class="version" id="version">
+            <i class="fas fa-code-branch"></i> v0.0.1
+        </div>
+    </header>
 
+    <!--Menu lateral presente em todas páginas-->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="index.html" class="active">
+                <i class="fas fa-home"></i> Início
+            </a></li>
+            <li><a href="pages/certificacoes.html">
+                <i class="fas fa-certificate"></i> Certificações
+            </a></li>
+            <li><a href="pages/projetos.html">
+                <i class="fas fa-code"></i> Projetos
+            </a></li>
+            <li><a href="pages/pesquisa.html">
+                <i class="fas fa-search"></i> Busca avançada
+            </a></li>
+            <li><a href="pages/estatisticas.html">
+                <i class="fas fa-chart-line"></i> Estatísticas
+            </a></li>
+            <li><a href="pages/pendentes.html">
+                <i class="fas fa-clock"></i> Aulas pendentes
+            </a></li>
+            <li><a href="pages/dificuldades.html">
+                <i class="fas fa-exclamation-triangle"></i> Com dificuldades
+            </a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
         <section>
-            <h2>📚 HTML & CSS</h2>
-            <div class="aulas">
-                <div class="card">
-                    <div class="card-header">
-                        <span class="titulo-aula">aula_001: Introdução ao HTML</span>
-                        <span class="data">2025-01-15</span>
-                    </div>
-                    <div class="resumo">
-                        Estrutura básica de um documento HTML: !DOCTYPE, html, head, body. 
-                        Tags principais e significado semântico.
-                    </div>
-                    <span class="status">✅ concluída</span>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <span class="titulo-aula">aula_002: Tags de texto e formatação</span>
-                        <span class="data">2025-01-16</span>
-                    </div>
-                    <div class="resumo">
-                        Headings (h1 a h6), parágrafos, negrito, itálico, listas ordenadas e não ordenadas.
-                    </div>
-                    <span class="status">✅ concluída</span>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <span class="titulo-aula">aula_003: Links e imagens</span>
-                        <span class="data">2025-01-17</span>
-                    </div>
-                    <div class="resumo">
-                        Tag a com atributos href, target. Tag img com src, alt. 
-                        Caminhos relativos e absolutos.
-                    </div>
-                    <span class="status">⏳ em andamento</span>
-                </div>
-            </div>
+            <h2><i class="fas fa-hand-wave"></i> Olá, sou Fernando J.A</h2>
+            <p class="subtitle">
+                <i class="fas fa-graduation-cap"></i> Este é meu portfólio de estudos e projetos pessoais.
+                aqui registro o passo da minha jornada no desenvolvimento
+                de software, desde a primeira linha do código até projetos completos.
+            </p>
         </section>
 
-        <section>
-            <h2>🐍 Python</h2>
-            <div class="aulas">
-                <div class="card">
-                    <div class="card-header">
-                        <span class="titulo-aula">aula_001: Sintaxe básica e variáveis</span>
-                        <span class="data">2025-01-10</span>
-                    </div>
-                    <div class="resumo">
-                        Primeiros comandos no Python. Variáveis, tipos primitivos (int, float, str, bool).
-                        Função print() e input().
-                    </div>
-                    <span class="status">✅ concluída</span>
+        <!--seção dos tipos de certificações-->
+        <section class="hub-cards">
+            <div class="hub-card" onclick="location.href='pages/certificacoes.html'">
+                <div class="hub-icon">
+                    <i class="fas fa-certificate"></i>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <span class="titulo-aula">aula_002: Estruturas condicionais</span>
-                        <span class="data">2025-01-12</span>
-                    </div>
-                    <div class="resumo">
-                        if, elif, else. Operadores de comparação e lógicos. Indentação.
-                    </div>
-                    <span class="status">✅ concluída</span>
+                <h3>Certificações</h3>
+                <p>Responsive web Design, JavaScript, Python, Front-End Development libraries, 
+                Relational Databases, Back-End Development and APIs, A2 English for Developer, 
+                B1 English for Developers, Free Foundational C#</p>
+                <span class="hub-link">
+                    Ver todas <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+
+            <div class="hub-card" onclick="location.href='pages/projetos.html'">
+                <div class="hub-icon">
+                    <i class="fab fa-github"></i>
                 </div>
+                <h3>Projetos</h3>
+                <p>Meus códigos no GitHub, componentes e aplicações</p>
+                <span class="hub-link">
+                    Ver projetos <i class="fas fa-external-link-alt"></i>
+                </span>
             </div>
         </section>
-
-        <section>
-            <h2>📜 JavaScript</h2>
-            <div class="aulas">
-                <div class="card">
-                    <div class="card-header">
-                        <span class="titulo-aula">aula_001: Variáveis e tipos</span>
-                        <span class="data">2025-01-14</span>
-                    </div>
-                    <div class="resumo">
-                        var, let, const. Tipos: string, number, boolean, null, undefined.
-                        typeof e conversões.
-                    </div>
-                    <span class="status">✅ concluída</span>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>freeCodeCamp - Trilha de estudos | Última atualização: 2025-01-20</p>
-            <p>evoluindo um commit por vez</p>
-        </footer>
-    </div>
+    </main>
 </body>
 </html>
